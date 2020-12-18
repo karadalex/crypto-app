@@ -1,10 +1,9 @@
-import { Ionicons } from '@expo/vector-icons';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import { BottomTabParamList } from '../types';
+import TabBarIcon from '../components/Icon';
 
 import Dashboard from '../screens/Dashboard';
 import Prices from '../screens/Prices';
@@ -27,43 +26,38 @@ export default function BottomTabNavigator() {
         name="Dashboard"
         component={Dashboard}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home-currency-usd" size={24} color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Prices"
         component={Prices}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="coins" size={24} color={color} family="fa5" />,
         }}
       />
       <BottomTab.Screen
         name="Trade"
         component={Trade}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="exchange" size={28} color={color} family="fa" />,
         }}
       />
       <BottomTab.Screen
         name="Portfolio"
         component={Portfolio}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="finance" size={28} color={color} />,
         }}
       />
       <BottomTab.Screen
         name="Account"
         component={Account}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          tabBarIcon: ({ color }) => <TabBarIcon name="person" size={28} color={color} family="material" />,
         }}
       />
     </BottomTab.Navigator>
   );
 }
 
-// You can explore the built-in icon families and icons on the web at:
-// https://icons.expo.fyi/
-function TabBarIcon(props: { name: string; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
-}
