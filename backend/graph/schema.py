@@ -1,12 +1,17 @@
-import tokens.schema
-import wallet.schema
+import graphene
+import users.schema
+# import tokens.schema
+# import wallet.schema
 
 
-class Query(tokens.schema.Query, wallet.schema.Query, graphene.ObjectType):
-    pass
+class Query(
+	users.schema.Query,
+	graphene.ObjectType
+):
+	pass
 
-class Mutation(tokens.schema.Mutation, wallet.schema.Mutation, graphene.ObjectType):
-    pass
+# class Mutation(users.schema.Mutation, graphene.ObjectType):
+# 	pass
 
 
-schema = graphene.Schema(query=Query, mutation=Mutation)
+schema = graphene.Schema(query=Query)
