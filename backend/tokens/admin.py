@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import CryptoCurrency, FiatCurrency, PriceRecord
 
-# Register your models here.
+
+admin.site.register(CryptoCurrency)
+admin.site.register(FiatCurrency)
+admin.site.register(PriceRecord)
