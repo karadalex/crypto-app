@@ -37,3 +37,8 @@ cd mobile
 yarn install
 yarn start
 ```
+
+## Database
+
+![](./erd.png)
+![](./db-schema.png)
