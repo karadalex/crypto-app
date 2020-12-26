@@ -58,11 +58,12 @@ export default function Dashboard() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginHorizontal: 20,
+    marginTop: 50,
+    backgroundColor: "transparent"
   },
   title: {
-    fontSize: 20,
+    fontSize: 35,
     fontWeight: 'bold',
   },
   separator: {
