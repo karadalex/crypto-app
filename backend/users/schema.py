@@ -12,7 +12,7 @@ class Query(graphene.ObjectType):
 		return User.objects.all()
 
 	def resolve_user(self, info, user__id):
-		return User.objects.first()
+		return User.objects.get(pk=user__id)
 
 # class Mutation(graphene.ObjectType):
 # 	pass

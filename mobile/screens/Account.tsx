@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useQuery, gql } from '@apollo/client';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Button } from 'react-native';
 import { Text, View } from '../components/Themed';
 
 
@@ -15,15 +15,23 @@ const USER_QUERY = gql`
 `;
 
 export default function Account() {
-  const { loading, error, data } = useQuery(USER_QUERY);
+  const { loading, error, data, refetch } = useQuery(USER_QUERY);
 
-  if (loading) return <Text>Loading...</Text>;
-  if (error) return <Text>Error :(</Text>;
-  
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Account</Text>
-      <Text>{JSON.stringify(data.user)}</Text>
+      {loading && <Text>Loading...</Text>}
+      {error && <Text>Error :(</Text>}
+      {data && (
+        <React.Fragment>
+          <Text>{JSON.stringify(data.user)}</Text>
+          <Button
+            onPress={() => refetch()}
+            title="Learn More"
+            accessibilityLabel="Learn more about this purple button"
+          />
+        </React.Fragment>
+      )}
     </View>
   );
 }
