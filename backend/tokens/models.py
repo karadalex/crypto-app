@@ -1,22 +1,26 @@
 from django.contrib.contenttypes.fields import GenericForeignKey
 from django.contrib.contenttypes.models import ContentType
 from django.db import models
+import uuid
 
 # Create your models here.
 class CryptoCurrency(models.Model):
-  id = models.UUIDField(primary_key=True)
+  class Meta:
+    verbose_name = "Crypto Currency"
+    verbose_name_plural = "Crypto Currencies"
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   symbol = models.CharField(max_length=5, unique=True)
   name = models.CharField(max_length=50, unique=True)
 
 
 class FiatCurrency(models.Model):
-  id = models.UUIDField(primary_key=True)
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   symbol = models.CharField(max_length=5, unique=True)
   name = models.CharField(max_length=20, unique=True)
 
 
 class PriceRecord(models.Model):
-  id = models.UUIDField(primary_key=True)
+  id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   # Both From and To fields can be Crypto or Fiat
   # -> made them generic with content_types
   # From field is used as base
