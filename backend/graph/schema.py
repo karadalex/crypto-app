@@ -1,11 +1,13 @@
 import graphene
 import users.schema
-# import tokens.schema
-# import wallet.schema
+import tokens.schema
+import wallet.schema
 
 
 class Query(
 	users.schema.Query,
+	tokens.schema.Query,
+	wallet.schema.Query,
 	graphene.ObjectType
 ):
 	pass

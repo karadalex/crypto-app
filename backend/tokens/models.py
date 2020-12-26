@@ -9,8 +9,8 @@ class CryptoCurrency(models.Model):
     verbose_name = "Crypto Currency"
     verbose_name_plural = "Crypto Currencies"
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-  symbol = models.CharField(max_length=5, unique=True)
-  name = models.CharField(max_length=50, unique=True)
+  symbol = models.CharField(max_length=5, unique=True, help_text='A 3 Letter (usually) identifier for the cryptocurrency, e.g. BTC or ETH')
+  name = models.CharField(max_length=50, unique=True, help_text='The full name of the cryptocurrency')
 
 
 class FiatCurrency(models.Model):
