@@ -2,6 +2,8 @@ import * as React from 'react';
 import { useQuery, gql } from '@apollo/client';
 import { StyleSheet, Button } from 'react-native';
 import { Text, View } from '../components/Themed';
+import Container from '../components/Container';
+import ScreenTitle from '../components/ScreenTitle'
 
 
 const USER_QUERY = gql`
@@ -18,8 +20,8 @@ export default function Account() {
   const { loading, error, data, refetch } = useQuery(USER_QUERY);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Account</Text>
+    <Container>
+      <ScreenTitle>Account</ScreenTitle>
       {loading && <Text>Loading...</Text>}
       {error && <Text>Error :(</Text>}
       {data && (
@@ -32,24 +34,6 @@ export default function Account() {
           />
         </React.Fragment>
       )}
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginTop: 50,
-    backgroundColor: "transparent"
-  },
-  title: {
-    fontSize: 35,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
-});
