@@ -25,11 +25,11 @@ class PriceRecord(models.Model):
   # -> made them generic with content_types
   # From field is used as base
   from_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, related_name='from_price_records')
-  from_id = models.PositiveIntegerField()
+  from_id = models.UUIDField()
   from_object = GenericForeignKey('from_type', 'from_id')
   from_amount = models.FloatField(blank=False, null=False)
   to_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, related_name='to_price_records')
-  to_id = models.PositiveIntegerField()
+  to_id = models.UUIDField()
   to_object = GenericForeignKey('to_type', 'to_id')
   created_at = models.DateTimeField(auto_now_add=True, editable=False, null=False, blank=False)
   updated_at = models.DateTimeField(auto_now=True, editable=False, null=False, blank=False)
