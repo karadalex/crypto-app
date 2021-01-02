@@ -2,9 +2,9 @@ import styled from 'styled-components/native'
 
 const Container = styled.View`
   flex: 1;
-  margin-left: 20;
-  margin-right: 20;
-  margin-top: 50;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
   background-color: transparent;
 `
 
