@@ -1,13 +1,15 @@
 import * as React from 'react';
 import { StyleSheet, Dimensions } from 'react-native';
 import { Text, View } from '../components/Themed';
+import Container from '../components/Container';
+import ScreenTitle from '../components/ScreenTitle'
 import { LineChart } from "react-native-chart-kit";
 
 
 export default function Dashboard() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Dashboard</Text>
+    <Container>
+      <ScreenTitle>Dashboard</ScreenTitle>
       <LineChart
         data={{
           labels: ["January", "February", "March", "April", "May", "June"],
@@ -51,24 +53,10 @@ export default function Dashboard() {
           borderRadius: 16
         }}
       />
-    </View>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginHorizontal: 20,
-    marginTop: 50,
-    backgroundColor: "transparent"
-  },
-  title: {
-    fontSize: 35,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+  
 });
