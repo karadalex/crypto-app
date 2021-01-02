@@ -29,8 +29,8 @@ export default function Account() {
           <Text>{JSON.stringify(data.user)}</Text>
           <Button
             onPress={() => refetch()}
-            title="Learn More"
-            accessibilityLabel="Learn more about this purple button"
+            title="Refresh"
+            accessibilityLabel="Refresh account details"
           />
         </React.Fragment>
       )}
