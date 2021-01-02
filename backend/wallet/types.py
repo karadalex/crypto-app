@@ -1,7 +1,12 @@
 from graphene_django.types import DjangoObjectType
 from django.contrib.auth.models import User
 from .models import Transaction, Wallet, Asset
+from django.contrib.contenttypes.models import ContentType
 
+
+class ContentObjectType(DjangoObjectType):
+	class Meta:
+		model = ContentType
 
 class TransactionType(DjangoObjectType):
 	class Meta:

@@ -29,6 +29,6 @@ class Asset(models.Model):
   id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   wallet = models.ForeignKey(Wallet, on_delete=models.CASCADE, related_name='assets')
   asset_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
-  asset_id = models.PositiveIntegerField()
+  asset_id = models.UUIDField()
   asset_object = GenericForeignKey('asset_type', 'asset_id')
   asset_amount = models.FloatField(blank=False, null=False)
