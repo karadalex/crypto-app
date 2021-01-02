@@ -5,7 +5,7 @@ const Container = styled.View`
   margin-left: 20;
   margin-right: 20;
   margin-top: 50;
-  background-color: "transparent";
+  /* background-color: "transparent"; */
 `
 
 export default Container;

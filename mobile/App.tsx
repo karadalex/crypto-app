@@ -30,3 +30,6 @@ export default function App() {
     );
   }
 }
+
+// Uncomment for storybook
+// export {default} from "./storybook";
